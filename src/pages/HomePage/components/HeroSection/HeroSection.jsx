@@ -1,0 +1,41 @@
+// Your HeroSection.jsx file
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import lawyersuit from '../ui/lawyersuit.png';
+import LawScaleAnimation from '../ui/lawscaleanimation.jsx';
+import lawScaleData from '../ui/lawscale.json';
+import './HeroSection.css';
+
+const HeroSection = () => {
+  return (
+    <section className="hero-section">
+      <div className="hero-background-animation">
+        <LawScaleAnimation animationData={lawScaleData} />
+      </div>
+
+      <div className="hero-visual-left">
+        <img src={lawyersuit} alt="Legal Professional" />
+      </div>
+
+      <div className="hero-content-container">
+        <div className="hero-text">
+          <h1>
+            <span className="hero-title-part-1">Navig</span>
+            <span className="hero-title-part-2">ate Law with AI</span>
+          </h1>
+          <div className="hero-cta-group">
+            {/* The button is now a Link component for static navigation */}
+            <Link to="/services" className="cta-button primary-cta">
+              Start Your Legal Journey
+              <ArrowRight size={20} />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* These should point to your actual filenames to avoid errors */
+@import "tailwindcss";
+@import './theme.css';
+@import './styleComponents.css';
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: var(--background); /* Set to clean background color */
+  overflow-x: hidden;
+  word-break: break-word;
+  margin: 0;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Elements */
+h1, h2, h3, h4, h5, h6 { font-weight: 600; line-height: 1.2; color: var(--text-primary); margin-top: 1.5em; margin-bottom: 0.75em; }
+h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } h3 { font-size: 1.75rem; } h4 { font-size: 1.5rem; } h5 { font-size: 1.25rem; } h6 { font-size: 1.125rem; }
+p { margin-bottom: 1rem; color: var(--text-secondary); }
+
+/* Links */
+a { color: var(--text-primary); text-decoration: underline; transition: color 0.2s ease; }
+a:hover { color: var(--text-secondary); }
+
+/* List Styles */
+.blog-content ul, .prose-editor ul { list-style-type: disc; list-style-position: outside; margin-left: 1.5rem; padding-left: 0; margin-bottom: 1rem; }
+.blog-content ol, .prose-editor ol { list-style-type: decimal; list-style-position: outside; margin-left: 1.5rem; padding-left: 0; margin-bottom: 1rem; }
+.blog-content li, .prose-editor li { display: list-item; margin-bottom: 0.5rem; line-height: 1.6; }
+
+/* FOCUS BORDER REMOVAL */
+*:focus, *:focus-visible, button:focus, button:focus-visible, textarea:focus, select:focus, a:focus, div:focus, [tabindex]:focus { outline: none !important; border: none !important; box-shadow: none !important; }
+button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner { border: none !important; padding: 0 !important; }
+
+/* Form Elements */
+input, textarea, select { background-color: var(--surface); border: 2px solid var(--border-light); color: var(--text-primary); border-radius: 0.5rem; padding: 0.75rem 1rem; transition: all 0.2s ease; font-family: inherit; }
+input::placeholder, textarea::placeholder { color: var(--text-muted); }
+
+/* Buttons with Gradient */
+button { font-family: inherit; cursor: pointer; border: none; border-radius: 0.5rem; font-weight: 500; transition: all 0.2s ease; }
+.btn-primary { background: var(--primary-gradient); color: var(--text-inverse); padding: 0.75rem 1.5rem; font-weight: 600; border-radius: 0.5rem; border: none; transition: all 0.2s ease; }
+.btn-primary:hover { background: var(--primary-gradient-hover); transform: translateY(-1px); }
+[data-theme='dark'] .btn-primary { color: var(--text-inverse); }
+.btn-secondary { background: var(--accent-gradient); color: var(--text-inverse); padding: 0.75rem 1.5rem; font-weight: 600; border-radius: 0.5rem; border: none; transition: all 0.2s ease; }
+.btn-secondary:hover { transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--primary-black); padding: 0.75rem 1.5rem; font-weight: 600; border-radius: 0.5rem; border: 2px solid transparent; background-clip: padding-box; position: relative; transition: all 0.2s ease; }
+.btn-outline::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--border-gradient); border-radius: 0.5rem; z-index: -1; margin: -2px; }
+.btn-outline:hover { background: var(--primary-gradient); color: var(--text-inverse); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Gradient Utilities */
+.gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; }
+.gradient-border { border: 2px solid transparent; background: var(--border-gradient) border-box; background-clip: padding-box, border-box; }
+.bg-primary-gradient { background: var(--primary-gradient); }
+.bg-accent-gradient { background: var(--accent-gradient); }
+
+/* Utility Classes */
+.container { width: 90%; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+
+/* Selection */
+::selection { background: var(--info-bg); color: var(--text-primary); }
+
+/* GLOBAL CURSOR AND CARET PREVENTION (Unchanged) */
+* { cursor: default !important; }
+*, *::before, *::after, html, body, div, span, p, h1, h2, h3, h4, h5, h6, section, article, aside, nav, header, footer, main, button, a, img, svg, canvas { cursor: default !important; -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; }
+* { caret-color: transparent !important; }
+*[contenteditable], *[contenteditable="true"] { -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; caret-color: transparent !important; cursor: default !important; }
+*::before, *::after { -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; cursor: default !important; }
+button, .btn, .btn-primary, .btn-secondary, .btn-outline, .btn-accent, a, [role="button"], [onclick], .clickable, .cursor-pointer { cursor: pointer !important; -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; caret-color: transparent !important; }
+input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="tel"], input[type="url"], input[type="number"], textarea, .text-input, .form-input, .search-input, .blog-search, .courses-search, [role="textbox"], .editable-content { cursor: text !important; -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important; caret-color: var(--primary-black) !important; }
+.blog-content, .course-description, .text-selectable, .prose, .content-area, p.selectable, .blog-card-info, .course-card-info { -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important; cursor: default !important; caret-color: transparent !important; }
+*:hover { caret-color: transparent !important; }
+*::-webkit-input-placeholder, *::-moz-placeholder, *:-ms-input-placeholder, *:-moz-placeholder { -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; caret-color: transparent !important; }
+*:disabled, .disabled { cursor: not-allowed !important; -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; caret-color: transparent !important; }
+div[tabindex], span[tabindex], .focus-trap, .modal-content, .dropdown-content, .tooltip { cursor: default !important; -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; caret-color: transparent !important; }
+.react-select, .select-container, .dropdown-select { cursor: pointer !important; caret-color: transparent !important; }
+.blog-card, .course-card, .card, .card-body { cursor: pointer !important; -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; caret-color: transparent !important; }
+*:focus, *:focus-visible, *:focus-within { caret-color: transparent !important; }
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type-="url"]:focus, input[type="number"]:focus, textarea:focus { caret-color: var(--primary-black) !important; }

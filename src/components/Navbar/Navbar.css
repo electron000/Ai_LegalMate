@@ -1,0 +1,303 @@
+/* Navbar Variables */
+:root {
+  --navbar-height: 60px;
+}
+
+/* Main Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  height: var(--navbar-height);
+  /* --- UPDATED: Changed solid background to a subtle gradient --- */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.79), rgba(0, 0, 0, 0.81), rgba(0, 0, 0, 0.83), rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.89), rgba(0, 0, 0, 0.91));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem; /* Space between logo and text */
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 55px; /* Control the size of the logo */
+}
+
+.navbar-brand .brand-text {
+  font-size: 1.2rem; /* Reduced font size */
+  font-weight: bold;
+  color: #FFFFFF; /* White brand text */
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Reduced gap for a tighter look */
+}
+
+/* --- UPDATED RULE FOR SPECIFICITY --- */
+.desktop-nav .nav-link {
+  color: #FFFFFF; /* White link text */
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.2rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+/* --- HOVER EFFECT FOR MIDDLE LINKS (GREY) --- */
+.desktop-nav .nav-link:hover {
+  background-color: #ffffff; /* Dark gray background on hover */
+  color: #000000;
+}
+
+
+/* Right Actions */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Desktop Auth Buttons */
+.desktop-auth {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name {
+  color: #AAAAAA;
+  font-weight: 500;
+}
+
+.login-btn {
+  padding: 0.2rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+  color: #FFFFFF; /* White button text */
+  border: 1px solid #555555; /* Gray border */
+}
+
+/* --- LOGIN BUTTON HOVER EFFECT (WHITE) --- */
+.login-btn:hover {
+  background: #FFFFFF; /* White background on hover */
+  color: #000000;     /* Black text on hover */
+  border-color: #FFFFFF; /* Match border to background */
+}
+
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1001;
+}
+
+.mobile-menu-btn:hover {
+  background: #222222;
+}
+
+/* Mobile Menu Overlay */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Mobile Menu with slide animation */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background: #111111;
+  border-left: 1px solid #333333;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 1rem;
+  padding-top: calc(var(--navbar-height) + 1rem);
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+/* Mobile Navigation Links */
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.mobile-nav-link {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  background: #333333;
+}
+
+/* Mobile Auth Section */
+.mobile-auth {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #333333;
+}
+
+.mobile-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFFFFF;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+.mobile-auth-buttons {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.mobile-dashboard-btn, 
+.mobile-logout-btn, 
+.mobile-login-btn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  text-align: center;
+}
+
+.mobile-dashboard-btn {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.mobile-logout-btn {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.mobile-login-btn {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.profile-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #555555;
+  border-radius: 50%;
+  background: transparent;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-icon-btn:hover {
+  background: #ffffff;
+  border-color: #000000;
+  color: #000000;
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .desktop-nav, .desktop-auth {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+  .brand-text {
+    font-size: 1.3rem; /* Reduced font size */
+  }
+  .mobile-menu {
+    width: 280px;
+    right: -280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 0.75rem;
+  }
+  .brand-text {
+    font-size: 1.2rem; /* Reduced font size */
+  }
+  .mobile-menu {
+    width: 100vw;
+    right: -100vw;
+  }
+}

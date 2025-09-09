@@ -1,0 +1,192 @@
+/* =================================== */
+/* FOOTER STYLES (BLACK & WHITE)       */
+/* =================================== */
+
+.footer {
+    /* --- BACKGROUND CHANGED TO SOLID BLACK --- */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.98), rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.84), rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.80)); 
+    border-top: 1px solid var(--border-light);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(3rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+    position: relative;
+    z-index: 2;
+}
+
+/* --- TEXT & LINK COLORS INVERTED FOR READABILITY --- */
+
+/* Company Info Section */
+.company-info {
+    max-width: 350px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand-text {
+    font-size: clamp(1.5rem, 1.5vw, 1.8rem);
+    font-weight: 700;
+    color: var(--text-inverse); /* White text */
+}
+
+.company-description {
+    color: var(--gray-400); /* Light Gray text */
+    line-height: 1.6;
+    margin-bottom: clamp(1rem, 3vw, 2rem);
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--gray-800); /* Dark gray */
+    border-radius: 12px;
+    color: var(--text-inverse); /* White icon */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-700);
+}
+
+.social-link:hover {
+    color: var(--text-inverse);
+    background: var(--gray-600); /* Lighter gray on hover */
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gray-500);
+}
+
+/* Footer Sections */
+.footer-section h4,
+.contact-info h4 {
+    color: var(--text-inverse); /* White text */
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: 600;
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+    position: relative;
+    padding-bottom: clamp(0.3rem, 1vw, 0.5rem);
+}
+
+.footer-section h4::after,
+.contact-info h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--text-inverse); /* White underline */
+    border-radius: 1px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--gray-400); /* Light Gray text */
+    text-decoration: none;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--text-inverse); /* White text on hover */
+    padding-left: 0.5rem;
+}
+
+/* Contact Section */
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.6rem, 1.5vw, 1rem);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+    color: var(--gray-400); /* Light Gray text */
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+}
+
+.contact-item svg {
+    color: var(--text-inverse); /* White icon */
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background: var(--primary-black); /* Solid Black Background */
+    padding: clamp(1rem, 2.5vw, 1.5rem) 0;
+    /* --- BORDER CHANGED TO WHITE --- */
+    border-top: 1px solid #FFFFFF; 
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.copyright p,
+.made-with-love {
+    color: var(--gray-400); /* Light gray text on black background */
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    margin: 0;
+}
+
+.made-with-love {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.made-with-love svg {
+    color: var(--gray-400);
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2.5rem 1.5rem;
+    }
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+}
