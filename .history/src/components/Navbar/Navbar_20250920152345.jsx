@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X } from 'lucide-react'; // Removed 'User' icon
-import logo from '../../assets/legal-logo.png';
+import { useAuth } from '../../contexts/AuthContext.jsx';
+import { Menu, X, User } from 'lucide-react';
+import logo from '../../assets/legal-logo.png'; // Import the logo
 import './Navbar.css';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
-
-  // Removed the useAuth hook and related variables (isAuthenticated, user, logout)
+  const { isAuthenticated, user, logout } = useAuth();
 
   const navLinks = [
     { label: 'Home', url: '/' },
@@ -16,7 +16,7 @@ const Navbar = () => {
     { label: 'Services', url: '/services' },
     { label: 'Blogs', url: '/blogs' },
     { label: 'Pricing', url: '/pricing' },
-    { label: 'Contact', url: '/contact' },
+    { label: 'Contact', url: '/contact' }
   ];
 
   useEffect(() => {
@@ -42,7 +42,11 @@ const Navbar = () => {
     navigate(url);
   };
 
-  // Removed the handleLogout function
+  const handleLogout = () => {
+    logout();
+    setMobileMenuOpen(false);
+    navigate('/');
+  };
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -70,11 +74,23 @@ const Navbar = () => {
 
       {/* Right Actions */}
       <div className="navbar-actions">
-        {/* Desktop Auth - Now static */}
+        {/* Desktop Auth */}
         <div className="desktop-auth">
-          <button onClick={() => navigate('/auth')} className="login-btn">
-            Login
-          </button>
+          {isAuthenticated ? (
+            <div className="user-menu">
+                <button
+                    onClick={() => navigate('/dashboard')}
+                    className="profile-icon-btn"
+                    title="Go to Dashboard"
+                >
+                    <User size={20} />
+                </button>
+            </div>
+          ) : (
+            <button onClick={() => navigate('/auth')} className="login-btn">
+              Login
+            </button>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -89,7 +105,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div
+        <div 
           className={`mobile-overlay ${mobileMenuOpen ? 'active' : ''}`}
           onClick={closeMobileMenu}
         />
@@ -109,15 +125,38 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Auth - Now static */}
         <div className="mobile-auth">
+          {isAuthenticated && (
+            <div className="mobile-user-info">
+              <User size={16} />
+              <span>{user?.name || user?.email}</span>
+            </div>
+          )}
+          
           <div className="mobile-auth-buttons">
-            <button
-              onClick={() => handleMobileNavClick('/auth')}
-              className="mobile-login-btn"
-            >
-              Login
-            </button>
+            {isAuthenticated ? (
+              <>
+                <button
+                  onClick={() => handleMobileNavClick('/dashboard')}
+                  className="mobile-dashboard-btn"
+                >
+                  Dashboard
+                </button>
+                <button
+                  onClick={handleLogout}
+                  className="mobile-logout-btn"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <button
+                onClick={() => handleMobileNavClick('/auth')}
+                className="mobile-login-btn"
+              >
+                Login
+              </button>
+            )}
           </div>
         </div>
       </div>

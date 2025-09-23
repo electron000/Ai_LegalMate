@@ -1,4 +1,4 @@
-// Your static HeroSection.jsx file
+// Your HeroSection.jsx file
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -9,12 +9,16 @@ import lawScaleData from '../ui/lawscale.json';
 import './HeroSection.css';
 
 const HeroSection = () => {
+  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  // The handler now navigates to a single, static route.
   const handleClick = (e) => {
     e.preventDefault();
-    navigate('/dashboard');
+    if (isAuthenticated) {
+      navigate('/dashboard');
+    } else {
+      navigate('/auth');
+    }
   };
 
   return (
@@ -34,9 +38,8 @@ const HeroSection = () => {
             <span className="hero-title-part-2">ate Law with AI</span>
           </h1>
           <div className="hero-cta-group">
-            {/* The button now has static text and a single purpose. */}
             <button className="cta-button primary-cta" onClick={handleClick}>
-              Start Your Legal Journey
+              {isAuthenticated ? 'Go to Dashboard' : 'Start Your Legal Journey'}
               <ArrowRight size={20} />
             </button>
           </div>

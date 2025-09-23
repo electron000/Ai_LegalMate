@@ -2,7 +2,7 @@ import React from 'react';
 import './HomePage.css'; // ADDED
 import HeroSection from './components/HeroSection/HeroSection.jsx';
 import HeroCarousel from './components/HeroCarousel/HeroCarousel.jsx';
-import FeatureSection from './components/FeatureSection/FeatureSection.jsx';
+import CombinedSections from './components/CombinedSections/CombinedSections.jsx';
 
 const HomePage = () => {
   return (
@@ -11,7 +11,7 @@ const HomePage = () => {
       <main>
         <HeroSection />
         <HeroCarousel />
-        <FeatureSection />
+        <CombinedSections />
       </main>
     </div>
   );
