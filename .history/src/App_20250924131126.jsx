@@ -17,6 +17,7 @@ function App() {
           padding: 0
         }}
       >
+        <ScrollToTop />
         <Navbar />
         <main
           className="main-content"

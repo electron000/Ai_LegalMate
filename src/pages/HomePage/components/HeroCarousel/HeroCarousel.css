@@ -1,6 +1,5 @@
-/* =================================== */
-/* HERO CAROUSEL STYLES - DARK THEME   */
-/* =================================== */
+
+/* HERO CAROUSEL STYLES */
 
 .hero-carousel-wrapper {
     width: 100%;
@@ -147,9 +146,7 @@
 .hero-carousel-nav-button.right { right: clamp(-60px, -12vw, -25px); }
 
 
-/* =================================== */
-/* RESPONSIVE MEDIA QUERIES            */
-/* =================================== */
+/* RESPONSIVE MEDIA QUERIES */
 
 @media (max-width: 768px) {
     .hero-carousel-container {

@@ -10,8 +10,6 @@ import './HeroSection.css';
 
 const HeroSection = () => {
   const navigate = useNavigate();
-
-  // The handler now navigates to a single, static route.
   const handleClick = (e) => {
     e.preventDefault();
     navigate('/dashboard');
@@ -34,7 +32,6 @@ const HeroSection = () => {
             <span className="hero-title-part-2">ate Law with AI</span>
           </h1>
           <div className="hero-cta-group">
-            {/* The button now has static text and a single purpose. */}
             <button className="cta-button primary-cta" onClick={handleClick}>
               Start Your Legal Journey
               <ArrowRight size={20} />

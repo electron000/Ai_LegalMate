@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
-
-/* These should point to your actual filenames to avoid errors */
 @import "tailwindcss";
 @import './theme.css';
 @import './styleComponents.css';
@@ -12,7 +10,7 @@
 
 body {
   font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background-color: var(--background); /* Set to clean background color */
+  background-color: var(--background);
   overflow-x: hidden;
   word-break: break-word;
   margin: 0;
@@ -70,7 +68,7 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 /* Selection */
 ::selection { background: var(--info-bg); color: var(--text-primary); }
 
-/* GLOBAL CURSOR AND CARET PREVENTION (Unchanged) */
+/* GLOBAL CURSOR AND CARET PREVENTION */
 * { cursor: default !important; }
 *, *::before, *::after, html, body, div, span, p, h1, h2, h3, h4, h5, h6, section, article, aside, nav, header, footer, main, button, a, img, svg, canvas { cursor: default !important; -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; }
 * { caret-color: transparent !important; }

@@ -1,15 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X } from 'lucide-react'; // Removed 'User' icon
+import { Menu, X } from 'lucide-react';
 import logo from '../../assets/legal-logo.png';
 import './Navbar.css';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
-
-  // Removed the useAuth hook and related variables (isAuthenticated, user, logout)
-
   const navLinks = [
     { label: 'Home', url: '/' },
     { label: 'Tools', url: '/tools' },
@@ -42,8 +39,6 @@ const Navbar = () => {
     navigate(url);
   };
 
-  // Removed the handleLogout function
-
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -58,8 +53,6 @@ const Navbar = () => {
         <img src={logo} alt="AI LegalMate Logo" className="brand-logo" />
         <span className="brand-text">AI LegalMate</span>
       </Link>
-
-      {/* Desktop Navigation */}
       <div className="desktop-nav">
         {navLinks.map((link, index) => (
           <Link key={index} to={link.url} className="nav-link">
@@ -67,17 +60,12 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-
-      {/* Right Actions */}
       <div className="navbar-actions">
-        {/* Desktop Auth - Now static */}
         <div className="desktop-auth">
           <button onClick={() => navigate('/auth')} className="login-btn">
             Login
           </button>
         </div>
-
-        {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
           className="mobile-menu-btn"
@@ -86,8 +74,6 @@ const Navbar = () => {
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-
-      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div
           className={`mobile-overlay ${mobileMenuOpen ? 'active' : ''}`}
@@ -95,7 +81,6 @@ const Navbar = () => {
         />
       )}
 
-      {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
         <div className="mobile-nav-links">
           {navLinks.map((link, index) => (
@@ -108,8 +93,7 @@ const Navbar = () => {
             </button>
           ))}
         </div>
-
-        {/* Mobile Auth - Now static */}
+        
         <div className="mobile-auth">
           <div className="mobile-auth-buttons">
             <button

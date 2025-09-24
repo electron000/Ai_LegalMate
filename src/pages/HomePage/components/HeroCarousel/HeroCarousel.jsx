@@ -80,7 +80,6 @@ const HeroCarousel = () => {
 
     const resetInterval = useCallback(() => {
         if (slideIntervalRef.current) clearInterval(slideIntervalRef.current);
-        // Carousel speed slowed down from 4000ms to 6000ms
         slideIntervalRef.current = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % totalItems);
         }, 6000);

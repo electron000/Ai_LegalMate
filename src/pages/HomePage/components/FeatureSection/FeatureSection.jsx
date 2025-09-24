@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Scale, ScanLine, PenSquare, Briefcase, Bot, Users } from 'lucide-react';
-// Remember to rename './CombinedSections.css' to './FeatureSection.css'
 import './FeatureSection.css';
 
 const FeatureListItem = ({ title, description, icon, buttonText, onClick }) => (

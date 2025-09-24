@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -17,6 +18,7 @@ function App() {
           padding: 0
         }}
       >
+        <ScrollToTop />
         <Navbar />
         <main
           className="main-content"

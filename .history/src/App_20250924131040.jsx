@@ -1,7 +1,9 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './pages/HomePage/HomePage';
+
 import './styles/index.css';
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
           padding: 0
         }}
       >
+        <ScrollToTop />
         <Navbar />
         <main
           className="main-content"
@@ -27,7 +30,9 @@ function App() {
           }}
         >
           <Routes>
+            {/* We are only rendering the Home page for now */}
             <Route path="/" element={<Home />} />
+            {/* You can add your other routes back here as you rebuild them */}
           </Routes>
         </main>
         <Footer />

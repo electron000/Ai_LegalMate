@@ -14,8 +14,6 @@ import './Footer.css';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
-
-    // Links updated for AI LegalMate
     const footerLinks = [
         { name: 'AI Research', path: '/research' },
         { name: 'Document Analysis', path: '/analysis' },
@@ -37,10 +35,8 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-content">
-                {/* Company Info Section */}
                 <div className="company-info">  
                   <div className="footer-logo">
-                        {/* New text-based logo for AI LegalMate */}
                         <div className="footer-brand-text">
                             AI LegalMate
                         </div>
@@ -65,8 +61,6 @@ const Footer = () => {
                         ))}
                     </div>
                 </div>
-
-                {/* Quick Links Section */}
                 <div className="footer-section">
                     <h4>Quick Links</h4>
                     <ul className="footer-links">
@@ -77,8 +71,6 @@ const Footer = () => {
                         ))}
                     </ul>
                 </div>
-
-                {/* Contact Information */}
                 <div className="contact-info">
                     <h4>Contact Us</h4>
                     <div className="contact-items">
