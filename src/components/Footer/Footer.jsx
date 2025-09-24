@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import {
     Facebook,
@@ -77,12 +76,12 @@ const Footer = () => {
                         <div className="contact-item">
                             <MapPin size={18} />
                             <span>
-                                New Delhi, India
+                                Guwahati, Assam, India
                             </span>
                         </div>
                         <div className="contact-item">
                             <Phone size={18} />
-                            <span>+91 98765 43210</span>
+                            <span>+91 6002239926</span>
                         </div>
                         <div className="contact-item">
                             <Mail size={18} />
